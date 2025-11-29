@@ -1,0 +1,6 @@
+@fashion_bingo_api_HostAddress = http://localhost:5226
+
+GET {{fashion_bingo_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

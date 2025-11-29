@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/fashion-bingo-api.props" />
+</Project>
