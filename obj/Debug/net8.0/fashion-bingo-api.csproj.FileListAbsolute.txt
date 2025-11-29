@@ -31,3 +31,4 @@
 /Users/christiatidwell/Projects/fashion-bingo-api/obj/Debug/net8.0/fashion-bingo-api.pdb
 /Users/christiatidwell/Projects/fashion-bingo-api/obj/Debug/net8.0/fashion-bingo-api.genruntimeconfig.cache
 /Users/christiatidwell/Projects/fashion-bingo-api/obj/Debug/net8.0/ref/fashion-bingo-api.dll
+/Users/christiatidwell/Projects/fashion-bingo-api/obj/Debug/net8.0/fashion-bingo-api.sourcelink.json
