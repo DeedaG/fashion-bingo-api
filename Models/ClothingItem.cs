@@ -5,4 +5,5 @@ public class ClothingItem
     public string Type { get; set; } // Shirt, Pants, Shoes, etc.
     public string Rarity { get; set; } // Common, Rare, Epic, Legendary
     public string Style { get; set; } // Casual, Formal, Sporty
+    public string ImageUrl { get; set; }
 }
