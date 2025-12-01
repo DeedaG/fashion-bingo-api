@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/christiatidwell/Projects/fashion-bingo-api/fashion-bingo-api.csproj": {}
+    "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/fashion-bingo-api.csproj": {}
   },
   "projects": {
-    "/Users/christiatidwell/Projects/fashion-bingo-api/fashion-bingo-api.csproj": {
+    "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/fashion-bingo-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/christiatidwell/Projects/fashion-bingo-api/fashion-bingo-api.csproj",
+        "projectUniqueName": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/fashion-bingo-api.csproj",
         "projectName": "fashion-bingo-api",
-        "projectPath": "/Users/christiatidwell/Projects/fashion-bingo-api/fashion-bingo-api.csproj",
+        "projectPath": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/fashion-bingo-api.csproj",
         "packagesPath": "/Users/christiatidwell/.nuget/packages/",
-        "outputPath": "/Users/christiatidwell/Projects/fashion-bingo-api/obj/",
+        "outputPath": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/christiatidwell/.nuget/NuGet/NuGet.Config"
@@ -43,9 +43,33 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.12, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

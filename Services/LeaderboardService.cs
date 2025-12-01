@@ -1,10 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+
 public class LeaderboardService
 {
-    private readonly Dictionary<Guid, Player> _players;
+     private readonly AppDbContext _context;
 
-    public LeaderboardService(Dictionary<Guid, Player> players)
+    public LeaderboardService(AppDbContext context)
     {
-        _players = players;
+        _context = context;
     }
 
     // Check if mannequin is fully dressed
@@ -16,9 +18,9 @@ public class LeaderboardService
     // Get leaderboard of fully dressed players
     public List<Player> GetLeaderboard(List<string> requiredTypes)
     {
-        return _players.Values
-            .Where(p => IsMannequinFullyDressed(p, requiredTypes))
-            .OrderBy(p => p.Name)
-            .ToList();
+        return _context.Player.Where(p => p.CurrentMannequin != null &&
+                                         requiredTypes.All(type => p.CurrentMannequin.EquippedItems.ContainsKey(type)))
+                              .OrderBy(p => p.Name)
+                              .ToList();
     }
 }
