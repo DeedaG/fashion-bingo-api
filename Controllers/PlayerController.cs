@@ -19,11 +19,22 @@ public class PlayerController : ControllerBase
     }
 
      [HttpPost("createPlayer")]
-    public ActionResult<Player> CreatePlayer([FromBody] Guid playerId)
+    public ActionResult<Player> CreatePlayer([FromBody] CreatePlayerRequest request)
     {
+        if (request == null || request.PlayerId == Guid.Empty)
+        {
+            return BadRequest("playerId is required.");
+        }
+
+        if (_playerService.PlayerExists(request.PlayerId))
+        {
+            return Conflict("Player already exists.");
+        }
+
         var player = new Player
         {
-            Id = playerId,
+            Id = request.PlayerId,
+            Name = string.IsNullOrWhiteSpace(request.Name) ? $"Player {request.PlayerId.ToString()[..8]}" : request.Name,
             Closet = new List<ClothingItem>()
         };
         _playerService.AddPlayer(player);

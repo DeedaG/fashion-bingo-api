@@ -37,16 +37,7 @@ public class BingoService
     {
         string[] rarities = { "Common", "Rare", "Epic", "Legendary" };
         string rarity = rarities[_random.Next(rarities.Length)];
-        string[] types = { "Shirt", "Pants", "Shoes", "Hat", "Accessory" };
-        string type = types[_random.Next(types.Length)];
-        return new ClothingItem
-        {
-            Id = Guid.NewGuid(),
-            Name = $"{rarity} {type}",
-            Rarity = rarity,
-            Type = type,
-            Style = "Casual"
-        };
+        return ClothingCatalog.CreateRandomItem(rarity, _random);
     }
 
     public int GetNextNumberForCaller()

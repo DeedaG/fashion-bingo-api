@@ -24,6 +24,11 @@ public class PlayerService
         return player;
     }
 
+    public bool PlayerExists(Guid playerId)
+    {
+        return _context.Player.Any(p => p.Id == playerId);
+    }
+
     public void AddPlayer(Player player)
     {
         _context.Player.Add(player);

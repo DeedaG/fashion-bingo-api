@@ -12,55 +12,77 @@ public class ClosetService
     // Keep the same method names as before
     public List<ClothingItem> GetCloset(Guid playerId)
     {
-        // Load from database instead of dictionary
-        var items = _context.Player
-                            .Where(c => c.Id == playerId)
-                            .Where(x => x.Closet != null)
-                            .SelectMany(p => p.Closet)
-                            .ToList();
-
-        // Map ClosetItem (DB entity) to ClothingItem if needed
-        return items.Select(c => new ClothingItem
+        var player = EnsurePlayer(playerId);
+        return player.Closet?.Select(c => new ClothingItem
         {
             Id = c.Id,
+            PlayerId = playerId,
             Name = c.Name,
-            Type = c.Type
-            // Map other properties
-        }).ToList();
+            Type = c.Type,
+            Rarity = c.Rarity,
+            Style = c.Style,
+            ImageUrl = c.ImageUrl
+        }).ToList() ?? new List<ClothingItem>();
     }
 
     public ClothingItem AddItemToCloset(Guid playerId, ClothingItem item)
     {
+        var player = EnsurePlayer(playerId);
+
         var closetItem = new ClothingItem
         {
             Id = Guid.NewGuid(),
             PlayerId = playerId,
             Name = item.Name,
-            Type = item.Type
-            // Map other properties
+            Type = item.Type,
+            Rarity = item.Rarity,
+            Style = item.Style,
+            ImageUrl = item.ImageUrl
         };
 
+        player.Closet ??= new List<ClothingItem>();
+        player.Closet.Add(closetItem);
         _context.ClothingItem.Add(closetItem);
         _context.SaveChanges();
 
-        return item;
+        return closetItem;
     }
 
     public Mannequin? EquipItem(Guid playerId, ClothingItem item)
     {
+        var player = EnsurePlayer(playerId);
+
+        player.CurrentMannequin ??= new Mannequin();
+        player.CurrentMannequin.EquippedItems[item.Type] = item;
+        _context.SaveChanges();
+        return player.CurrentMannequin;
+    }
+
+    private Player EnsurePlayer(Guid playerId)
+    {
         var player = _context.Player
-                            .Where(p => p.Id == playerId)
+                             .Include(p => p.Closet)
                              .Include(p => p.CurrentMannequin)
-                             .ThenInclude(m => m.EquippedItems)
                              .FirstOrDefault(p => p.Id == playerId);
 
-        if (player != null)
+        if (player == null)
         {
-            player.CurrentMannequin.EquippedItems[item.Type] = item;
+            player = new Player
+            {
+                Id = playerId,
+                Name = $"Player {playerId.ToString()[..8]}",
+                Closet = new List<ClothingItem>(),
+                CurrentMannequin = new Mannequin()
+            };
+            _context.Player.Add(player);
             _context.SaveChanges();
-            return player.CurrentMannequin;
+        }
+        else
+        {
+            player.Closet ??= new List<ClothingItem>();
+            player.CurrentMannequin ??= new Mannequin();
         }
 
-        return null;
+        return player;
     }
 }

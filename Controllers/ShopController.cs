@@ -5,14 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 public class ShopController : ControllerBase
 {
     private readonly ShopService _shopService;
-    private readonly Dictionary<Guid, Player> _players;
+    private readonly PlayerService _playerService;
 
     public ShopController(
         ShopService shopService,
-        Dictionary<Guid, Player> players)
+        PlayerService playerService)
     {
         _shopService = shopService;
-        _players = players;
+        _playerService = playerService;
     }
 
 
@@ -20,7 +20,7 @@ public class ShopController : ControllerBase
 [HttpPost("{playerId}/buy")]
 public ActionResult<Economy> Buy(Guid playerId, [FromBody] ShopPurchase purchase)
 {
-    var player = _players[playerId];
+    var player = _playerService.GetPlayer(playerId);
 
     switch (purchase.Type)
     {
@@ -30,7 +30,6 @@ public ActionResult<Economy> Buy(Guid playerId, [FromBody] ShopPurchase purchase
             break;
 
         case "gems":
-            // TODO: integrate real payments later
             player.Economy.Gems += purchase.Amount;
             break;
 
@@ -41,7 +40,7 @@ public ActionResult<Economy> Buy(Guid playerId, [FromBody] ShopPurchase purchase
             break;
     }
 
+    _shopService.SaveEconomy(player);
     return Ok(player.Economy);
 }
 }
-

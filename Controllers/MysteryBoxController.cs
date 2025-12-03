@@ -5,31 +5,29 @@ using Microsoft.AspNetCore.Mvc;
 public class MysteryBoxController : ControllerBase
 {
     private readonly MysteryBoxService _mysteryBoxService;
-    private readonly Dictionary<Guid, Player> _players;
+    private readonly PlayerService _playerService;
+    private readonly ClosetService _closetService;
 
     public MysteryBoxController(
         MysteryBoxService mysteryBoxService,
-        Dictionary<Guid, Player> players)
+        PlayerService playerService,
+        ClosetService closetService)
     {
         _mysteryBoxService = mysteryBoxService;
-        _players = players;
+        _playerService = playerService;
+        _closetService = closetService;
     }
 
     [HttpPost("{playerId}/open")]
     public ActionResult<MysteryBoxReward> OpenBox(Guid playerId)
     {
-        var player = _players[playerId];
         var reward = _mysteryBoxService.OpenMysteryBox();
 
-        // Add clothing to closet
-        player.ClosetItems.Add(reward.Clothing);
-
-        // Add coins/gems
+        var player = _playerService.GetPlayer(playerId);
         player.Economy.Coins += reward.Coins;
         player.Economy.Gems += reward.Gems;
-
-        // Save reward history
         player.InventoryRewards.Add(reward);
+        _closetService.AddItemToCloset(playerId, reward.Clothing);
 
         return Ok(reward);
     }

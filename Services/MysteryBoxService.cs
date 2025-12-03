@@ -14,15 +14,7 @@ public class MysteryBoxService
             _ => "Legendary"
         };
 
-        // Generate clothing item
-        var clothing = new ClothingItem
-        {
-            Id = Guid.NewGuid(),
-            Name = $"{rarity} Item {Guid.NewGuid().ToString().Substring(0, 5)}",
-            Type = GetRandomType(),
-            ImageUrl = "/assets/clothes/default.png",
-            Rarity = rarity
-        };
+        var clothing = ClothingCatalog.CreateRandomItem(rarity, _rng);
 
         return new MysteryBoxReward
         {
@@ -31,11 +23,5 @@ public class MysteryBoxService
             Gems = rarity == "Legendary" ? 5 : 0,
             Rarity = rarity
         };
-    }
-
-    private string GetRandomType()
-    {
-        var types = new[] { "Shirt", "Pants", "Shoes", "Hat", "Accessory" };
-        return types[_rng.Next(types.Length)];
     }
 }
