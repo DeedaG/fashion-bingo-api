@@ -23,5 +23,10 @@ public class PlayerService
 
         return player;
     }
-    
+
+    public void AddPlayer(Player player)
+    {
+        _context.Player.Add(player);
+        _context.SaveChanges();
+    }
 }
