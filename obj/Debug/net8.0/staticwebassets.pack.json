@@ -1,0 +1,97 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/README.md",
+      "PackagePath": "staticwebassets/clothing/README.md"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/blouse-black.png",
+      "PackagePath": "staticwebassets/clothing/blouse-black.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/flowerjeans.png",
+      "PackagePath": "staticwebassets/clothing/flowerjeans.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/goodjeans.png",
+      "PackagePath": "staticwebassets/clothing/goodjeans.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/gown-black.png",
+      "PackagePath": "staticwebassets/clothing/gown-black.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/handbag-9141957_640.png",
+      "PackagePath": "staticwebassets/clothing/handbag-9141957_640.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/high-heels-36374_640.png",
+      "PackagePath": "staticwebassets/clothing/high-heels-36374_640.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/leather-coat.png",
+      "PackagePath": "staticwebassets/clothing/leather-coat.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/pearls.png",
+      "PackagePath": "staticwebassets/clothing/pearls.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/pink-coat.png",
+      "PackagePath": "staticwebassets/clothing/pink-coat.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/pink-tee.png",
+      "PackagePath": "staticwebassets/clothing/pink-tee.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/purse-black.png",
+      "PackagePath": "staticwebassets/clothing/purse-black.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/red-heel.png",
+      "PackagePath": "staticwebassets/clothing/red-heel.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sneakers.png",
+      "PackagePath": "staticwebassets/clothing/sneakers.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/stiletto.png",
+      "PackagePath": "staticwebassets/clothing/stiletto.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sun-dress.png",
+      "PackagePath": "staticwebassets/clothing/sun-dress.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sweater.jpg",
+      "PackagePath": "staticwebassets/clothing/sweater.jpg"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/tennis-shoes-312023_640.png",
+      "PackagePath": "staticwebassets/clothing/tennis-shoes-312023_640.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/trousers.png",
+      "PackagePath": "staticwebassets/clothing/trousers.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.fashion-bingo-api.props",
+      "PackagePath": "build\\fashion-bingo-api.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.fashion-bingo-api.props",
+      "PackagePath": "buildMultiTargeting\\fashion-bingo-api.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.fashion-bingo-api.props",
+      "PackagePath": "buildTransitive\\fashion-bingo-api.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.fashion-bingo-api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

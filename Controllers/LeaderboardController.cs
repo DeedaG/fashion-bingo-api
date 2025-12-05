@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 public class LeaderboardController : ControllerBase
 {
     private readonly LeaderboardService _leaderboardService;
-    private readonly List<string> _requiredTypes = new List<string> { "Shirt", "Pants", "Shoes", "Hat", "Accessory" };
+    private readonly List<string> _requiredTypes = new List<string> { "Shirt", "Pants", "Shoes", "Hat", "Necklace" };
 
     public LeaderboardController(LeaderboardService leaderboardService)
     {

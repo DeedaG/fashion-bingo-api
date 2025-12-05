@@ -30,11 +30,11 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.EnsureCreated();
-}
+// using (var scope = app.Services.CreateScope())
+// {
+//     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+//     db.Database.EnsureCreated();
+// }
 
 
 // Configure middleware
@@ -51,6 +51,7 @@ else
     app.UseHttpsRedirection();
 }
 
+app.UseStaticFiles();
 app.UseRouting();
 
 // Enable CORS

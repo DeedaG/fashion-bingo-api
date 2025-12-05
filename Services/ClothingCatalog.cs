@@ -15,18 +15,21 @@ public static class ClothingCatalog
 
     private static readonly List<ClothingTemplate> Templates = new()
     {
-        new("Minimal Grid Tee", "Shirt", "Streetwear", "Common"),
-        new("Everyday Taper Joggers", "Pants", "Athleisure", "Common"),
-        new("Sketchbook Beanie", "Hat", "Casual", "Common"),
-        new("Halftone Wrap Blouse", "Shirt", "Boho", "Rare"),
-        new("Outline Rush Sneakers", "Shoes", "Athleisure", "Rare"),
-        new("Gallery Pleat Trousers", "Pants", "Resort", "Rare"),
-        new("Contour Blazer Shell", "Shirt", "Evening", "Epic"),
-        new("Vector Runner Boots", "Shoes", "Streetwear", "Epic"),
-        new("Orbit Line Visor", "Hat", "Futuristic", "Epic"),
-        new("Halo Wire Necklace", "Accessory", "Runway", "Legendary"),
-        new("Monoline Strap Heels", "Shoes", "Runway", "Legendary"),
-        new("Feather Crest Fascinator", "Hat", "Couture", "Legendary")
+        new("Winter Coat", "Coat", "Streetwear", "Common", "pink-coat.png"),
+        new("Blue Leather Handbag", "Shoes", "Streetwear", "Common", "handbag-9141957_640.png"),
+        new("Black Top", "Blouse", "Streetwear", "Common", "blouse-black.png"),
+        new("Leather Coat", "Coat", "Winter", "Common", "leather-coat.png"),
+        new("Trousers", "Sportswear", "Resort", "Common","trousers-8029163_640.png" ),
+        new("Sun Dress", "Dress", "Casual", "Common", "sun-dress.png"),
+        new("T Shirt", "Shirt", "Casual", "Common", "pink-tee.png"),
+        new("Sneakers", "Shoes", "Athleisure", "common", "sneakers.png"),
+        new("Jeans", "Pants", "Streetwear", "Common", "goodjeans.png"),
+        new("Velvet Black Purse", "Bag", "Evening", "Epic", "purse-black.png"),
+        new("Evening Shoe", "Shoes", "Evening", "Epic", "red-heel.png"),
+        new("Sweater", "Sweater", "Streetwear", "Common", "sweater.jpg"),
+        new("Pearl Necklace", "Necklace", "Runway", "Legendary", "pearls.png"),
+        new("Casual Shoes", "Shoes", "Streetwear", "common", "tennis-shoes-312023_640.png"),
+        new("Black Stiletto", "Shoes", "Evening", "Rare", "stiletto.png")
     };
 
     private static readonly Dictionary<string, Func<string, string>> OutlineByType = new(StringComparer.OrdinalIgnoreCase)
@@ -35,7 +38,8 @@ public static class ClothingCatalog
         ["Pants"] = color => SvgData(BuildPantsSvg(color)),
         ["Shoes"] = color => SvgData(BuildShoesSvg(color)),
         ["Hat"] = color => SvgData(BuildHatSvg(color)),
-        ["Accessory"] = color => SvgData(BuildAccessorySvg(color))
+        ["Accessory"] = color => SvgData(BuildAccessorySvg(color)),
+        ["Necklace"] = color => SvgData(BuildAccessorySvg(color))
     };
 
     public static ClothingItem CreateRandomItem(string rarity, Random rng)
@@ -52,9 +56,11 @@ public static class ClothingCatalog
         var template = pool[rng.Next(pool.Count)];
         var palette = Palettes[rng.Next(Palettes.Count)];
         var color = palette.GetColorForType(template.Type, rng);
-        var imageUrl = OutlineByType.TryGetValue(template.Type, out var outline)
-            ? outline(color)
-            : OutlineByType["Accessory"](color);
+        var imageUrl = !string.IsNullOrWhiteSpace(template.Sprite)
+            ? $"/clothing/{template.Sprite}"
+            : OutlineByType.TryGetValue(template.Type, out var outline)
+                ? outline(color)
+                : OutlineByType["Accessory"](color);
 
         return new ClothingItem
         {
@@ -63,7 +69,8 @@ public static class ClothingCatalog
             Type = template.Type,
             Style = template.Style,
             Rarity = template.Rarity,
-            ImageUrl = imageUrl
+            ImageUrl = imageUrl,
+            PrimaryColor = color
         };
     }
 
@@ -76,7 +83,8 @@ public static class ClothingCatalog
         string Name,
         string Type,
         string Style,
-        string Rarity);
+        string Rarity,
+        string Sprite);
 
     private record Palette(string Name, string Primary, string Secondary, string Accent, string Highlight)
     {

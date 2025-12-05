@@ -7,4 +7,5 @@ public class ClothingItem
     public string Rarity { get; set; } = string.Empty; // Common, Rare, Epic, Legendary
     public string Style { get; set; } = string.Empty; // Casual, Formal, Sporty
     public string? ImageUrl { get; set; }
+    public string PrimaryColor { get; set; } = "#FFFFFF";
 }

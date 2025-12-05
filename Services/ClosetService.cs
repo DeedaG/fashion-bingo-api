@@ -21,7 +21,8 @@ public class ClosetService
             Type = c.Type,
             Rarity = c.Rarity,
             Style = c.Style,
-            ImageUrl = c.ImageUrl
+            ImageUrl = c.ImageUrl,
+            PrimaryColor = c.PrimaryColor
         }).ToList() ?? new List<ClothingItem>();
     }
 
@@ -37,7 +38,8 @@ public class ClosetService
             Type = item.Type,
             Rarity = item.Rarity,
             Style = item.Style,
-            ImageUrl = item.ImageUrl
+            ImageUrl = item.ImageUrl,
+            PrimaryColor = item.PrimaryColor
         };
 
         player.Closet ??= new List<ClothingItem>();
