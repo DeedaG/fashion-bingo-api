@@ -18,6 +18,7 @@ public static class ClothingCatalog
        new("Winter Coat", "Coat", "Streetwear", "Common", "pink-coat.png"),
 
       new("Leather Coat", "Coat", "Winter", "Common", "leather-coat.png"),
+      new("Pom Hat", "Hat", "Winter wear", "Common", "pom-hat.jpg"),
       
       //outfit #1
         new("Sun Dress", "Dress", "Casual", "Common", "sun-dress.png"),
@@ -28,6 +29,8 @@ public static class ClothingCatalog
       new("Blue Leather Handbag", "Bag", "Streetwear", "Common", "handbag-blue.png"),
      new("Black Top", "Blouse", "Streetwear", "Common", "blouse-black.png"),
       new("Pearl Necklace", "Necklace", "Runway", "Legendary", "pearls.png"),
+      new("Gold Skirt", "Pants", "Sportswear", "Common", "taffeta-skirt.png"),
+      new("Black Boot", "Shoes", "Sportwear", "Common", "boot.png"),
 
     // outfit #3
         new("T Shirt", "Shirt", "Casual", "Common", "pink-tee.png"),
@@ -38,6 +41,7 @@ public static class ClothingCatalog
     //outfit #4
        new("Velvet Black Purse", "Bag", "Evening", "Epic", "purse-black.png"),
        new("Black Stiletto", "Shoes", "Evening", "Rare", "stiletto.png"),
+       new("Black Dress", "Dress", "Evening", "Rare", "gown-black.png"),
 
     //outfit #5
       new("Trousers", "Pants", "Resort", "Common","trousers.png" ),
