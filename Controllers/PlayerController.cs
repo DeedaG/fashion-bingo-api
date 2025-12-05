@@ -13,7 +13,7 @@ public class PlayerController : ControllerBase
     }
 
     [HttpGet("{playerId}")]
-    public ActionResult<List<Player>> GetPlayer(Guid playerId)
+    public ActionResult<Player> GetPlayer(Guid playerId)
     {
         return Ok(_playerService.GetPlayer(playerId));
     }
@@ -35,9 +35,17 @@ public class PlayerController : ControllerBase
         {
             Id = request.PlayerId,
             Name = string.IsNullOrWhiteSpace(request.Name) ? $"Player {request.PlayerId.ToString()[..8]}" : request.Name,
-            Closet = new List<ClothingItem>()
+            Closet = new List<ClothingItem>(),
+            IsPremium = request.IsPremium
         };
         _playerService.AddPlayer(player);
+        return Ok(player);
+    }
+
+    [HttpPost("{playerId}/upgrade")]
+    public ActionResult<Player> UpdatePremiumStatus(Guid playerId, [FromBody] UpdatePremiumStatusRequest request)
+    {
+        var player = _playerService.SetPremiumStatus(playerId, request?.IsPremium ?? true);
         return Ok(player);
     }
 

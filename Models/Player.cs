@@ -7,4 +7,5 @@ public class Player
     public Mannequin CurrentMannequin { get; set; } = new Mannequin();
     public Economy Economy { get; set; } = new Economy();
     public List<MysteryBoxReward> InventoryRewards { get; set; } = new();
+    public bool IsPremium { get; set; }
 }

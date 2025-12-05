@@ -84,6 +84,11 @@ public class ClosetService
         var player = EnsurePlayer(playerId);
         player.Closet ??= new List<ClothingItem>();
 
+        if (player.IsPremium)
+        {
+            return true;
+        }
+
         var idSet = new HashSet<Guid>(ids);
 
         if (player.Closet.Count > 0)

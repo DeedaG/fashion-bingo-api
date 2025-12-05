@@ -34,4 +34,17 @@ public class PlayerService
         _context.Player.Add(player);
         _context.SaveChanges();
     }
+
+    public Player SetPremiumStatus(Guid playerId, bool isPremium)
+    {
+        var player = _context.Player.FirstOrDefault(p => p.Id == playerId);
+        if (player == null)
+        {
+            throw new Exception("Player not found");
+        }
+
+        player.IsPremium = isPremium;
+        _context.SaveChanges();
+        return player;
+    }
 }
