@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/clothing/blouse-black.png"
     },
     {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/boot.png",
+      "PackagePath": "staticwebassets/clothing/boot.png"
+    },
+    {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/doc-marten.png",
       "PackagePath": "staticwebassets/clothing/doc-marten.png"
     },
@@ -33,8 +37,8 @@
       "PackagePath": "staticwebassets/clothing/handbag-blue.png"
     },
     {
-      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/high-heels-36374_640.png",
-      "PackagePath": "staticwebassets/clothing/high-heels-36374_640.png"
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/high-heels.png",
+      "PackagePath": "staticwebassets/clothing/high-heels.png"
     },
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/leather-coat.png",
@@ -51,6 +55,10 @@
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/pink-tee.png",
       "PackagePath": "staticwebassets/clothing/pink-tee.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/pom-hat.jpg",
+      "PackagePath": "staticwebassets/clothing/pom-hat.jpg"
     },
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/purse-black.png",
@@ -83,6 +91,10 @@
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sweater.jpg",
       "PackagePath": "staticwebassets/clothing/sweater.jpg"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/taffeta-skirt.png",
+      "PackagePath": "staticwebassets/clothing/taffeta-skirt.png"
     },
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/tennis-shoes.png",
