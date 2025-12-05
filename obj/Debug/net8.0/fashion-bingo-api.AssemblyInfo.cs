@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("fashion-bingo-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e745a76be14f75aebde6899e018044eb5d79ebd7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e628acd798b0cf0771be3f64f62f3f0ba0e2ca01")]
 [assembly: System.Reflection.AssemblyProductAttribute("fashion-bingo-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("fashion-bingo-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

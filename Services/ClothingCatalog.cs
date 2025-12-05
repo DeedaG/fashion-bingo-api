@@ -18,26 +18,33 @@ public static class ClothingCatalog
        new("Winter Coat", "Coat", "Streetwear", "Common", "pink-coat.png"),
 
       new("Leather Coat", "Coat", "Winter", "Common", "leather-coat.png"),
-     new("Doc Martens", "Shoes", "Boots", "Common", "doc-marten.png"),
-
-      new("Blue Leather Handbag", "Bag", "Streetwear", "Common", "handbag-blue.png"),
-     new("Black Top", "Blouse", "Streetwear", "Common", "blouse-black.png"),
-      new("Pearl Necklace", "Necklace", "Runway", "Legendary", "pearls.png"),
       
+      //outfit #1
         new("Sun Dress", "Dress", "Casual", "Common", "sun-dress.png"),
       new ("Summer Sandal", "Shoes", "Sportswear", "Common", "sandal.png"),
       new("Sun Hat", "Hat", "Sportswear", "Common", "straw-hat.png"),
 
+    //outfit #2
+      new("Blue Leather Handbag", "Bag", "Streetwear", "Common", "handbag-blue.png"),
+     new("Black Top", "Blouse", "Streetwear", "Common", "blouse-black.png"),
+      new("Pearl Necklace", "Necklace", "Runway", "Legendary", "pearls.png"),
+
+    // outfit #3
         new("T Shirt", "Shirt", "Casual", "Common", "pink-tee.png"),
         new("Sneakers", "Shoes", "Athleisure", "common", "sneakers.jpg"),
         new("Jeans", "Pants", "Streetwear", "Common", "goodjeans.png"),
         new("Baseball Hat", "Hat", "Casual", "Common", "baseball-hat.png"),
 
+    //outfit #4
        new("Velvet Black Purse", "Bag", "Evening", "Epic", "purse-black.png"),
        new("Black Stiletto", "Shoes", "Evening", "Rare", "stiletto.png"),
 
+    //outfit #5
       new("Trousers", "Pants", "Resort", "Common","trousers.png" ),
        new("Sweater", "Sweater", "Streetwear", "Common", "sweater.jpg"),
+       new("Doc Martens", "Shoes", "Boots", "Common", "doc-marten.png"),
+
+    //extra items
       new("Casual Shoes", "Shoes", "Streetwear", "common", "tennis-shoes.png"),
 
        new("Evening Shoe", "Shoes", "Evening", "Epic", "red-heel.png")
