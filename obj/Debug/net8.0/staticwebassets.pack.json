@@ -5,8 +5,16 @@
       "PackagePath": "staticwebassets/clothing/README.md"
     },
     {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/baseball-hat.png",
+      "PackagePath": "staticwebassets/clothing/baseball-hat.png"
+    },
+    {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/blouse-black.png",
       "PackagePath": "staticwebassets/clothing/blouse-black.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/doc-marten.png",
+      "PackagePath": "staticwebassets/clothing/doc-marten.png"
     },
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/flowerjeans.png",
@@ -21,8 +29,8 @@
       "PackagePath": "staticwebassets/clothing/gown-black.png"
     },
     {
-      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/handbag-9141957_640.png",
-      "PackagePath": "staticwebassets/clothing/handbag-9141957_640.png"
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/handbag-blue.png",
+      "PackagePath": "staticwebassets/clothing/handbag-blue.png"
     },
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/high-heels-36374_640.png",
@@ -53,12 +61,20 @@
       "PackagePath": "staticwebassets/clothing/red-heel.png"
     },
     {
-      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sneakers.png",
-      "PackagePath": "staticwebassets/clothing/sneakers.png"
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sandal.png",
+      "PackagePath": "staticwebassets/clothing/sandal.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sneakers.jpg",
+      "PackagePath": "staticwebassets/clothing/sneakers.jpg"
     },
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/stiletto.png",
       "PackagePath": "staticwebassets/clothing/stiletto.png"
+    },
+    {
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/straw-hat.png",
+      "PackagePath": "staticwebassets/clothing/straw-hat.png"
     },
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sun-dress.png",
@@ -69,8 +85,8 @@
       "PackagePath": "staticwebassets/clothing/sweater.jpg"
     },
     {
-      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/tennis-shoes-312023_640.png",
-      "PackagePath": "staticwebassets/clothing/tennis-shoes-312023_640.png"
+      "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/tennis-shoes.png",
+      "PackagePath": "staticwebassets/clothing/tennis-shoes.png"
     },
     {
       "Id": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/trousers.png",

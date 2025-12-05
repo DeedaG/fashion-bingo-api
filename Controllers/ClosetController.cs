@@ -32,4 +32,23 @@ public class ClosetController : ControllerBase
         Console.WriteLine($"[ClosetController] EQUIP item for playerId: {playerId}, item: {item?.Name ?? "null"}");
         return Ok(_closetService.EquipItem(playerId, item));
     }
+
+    [HttpPost("{playerId}/consume")]
+    public IActionResult ConsumeCloset(Guid playerId, [FromBody] ConsumeClosetItemsRequest request)
+    {
+        if (request?.ItemIds == null || request.ItemIds.Count == 0)
+        {
+            return BadRequest("At least one item id is required to consume closet items.");
+        }
+
+        Console.WriteLine($"[ClosetController] CONSUME items for playerId: {playerId}, count: {request.ItemIds.Count}");
+        var removed = _closetService.ConsumeClosetItems(playerId, request.ItemIds);
+
+        if (!removed)
+        {
+            return NotFound("No matching closet items were found for removal.");
+        }
+
+        return NoContent();
+    }
 }

@@ -47,8 +47,7 @@ public class BingoController : ControllerBase
                 return BadRequest("Invalid or missing playerId GUID.");
             }
 
-            // For demo, generate a reward (could be tied to playerId later)
-            ClothingItem reward = _bingoService.GenerateReward();
+            ClothingItem reward = _bingoService.GenerateReward(playerId);
             // In real app, fetch player and add item to closet, persist, etc.
             return Ok(reward);
         }

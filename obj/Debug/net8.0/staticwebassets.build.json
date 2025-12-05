@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Hw/IYdQ8hNDvsam6bC76aC/x+yS64hA+jkcSfZCOe5U=",
+  "Hash": "x2x8fZEVo895F96UCE8RyFQafFTBYx+LTSK+mJxVdJs=",
   "Source": "fashion-bingo-api",
   "BasePath": "_content/fashion-bingo-api",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/baseball-hat.png",
+      "SourceId": "fashion-bingo-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/",
+      "BasePath": "_content/fashion-bingo-api",
+      "RelativePath": "clothing/baseball-hat.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/clothing/baseball-hat.png"
+    },
     {
       "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/blouse-black.png",
       "SourceId": "fashion-bingo-api",
@@ -34,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/clothing/blouse-black.png"
+    },
+    {
+      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/doc-marten.png",
+      "SourceId": "fashion-bingo-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/",
+      "BasePath": "_content/fashion-bingo-api",
+      "RelativePath": "clothing/doc-marten.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/clothing/doc-marten.png"
     },
     {
       "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/flowerjeans.png",
@@ -93,12 +131,12 @@
       "OriginalItemSpec": "wwwroot/clothing/gown-black.png"
     },
     {
-      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/handbag-9141957_640.png",
+      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/handbag-blue.png",
       "SourceId": "fashion-bingo-api",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/",
       "BasePath": "_content/fashion-bingo-api",
-      "RelativePath": "clothing/handbag-9141957_640.png",
+      "RelativePath": "clothing/handbag-blue.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,7 +147,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/clothing/handbag-9141957_640.png"
+      "OriginalItemSpec": "wwwroot/clothing/handbag-blue.png"
     },
     {
       "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/high-heels-36374_640.png",
@@ -264,12 +302,12 @@
       "OriginalItemSpec": "wwwroot/clothing/red-heel.png"
     },
     {
-      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sneakers.png",
+      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sandal.png",
       "SourceId": "fashion-bingo-api",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/",
       "BasePath": "_content/fashion-bingo-api",
-      "RelativePath": "clothing/sneakers.png",
+      "RelativePath": "clothing/sandal.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -280,7 +318,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/clothing/sneakers.png"
+      "OriginalItemSpec": "wwwroot/clothing/sandal.png"
+    },
+    {
+      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sneakers.jpg",
+      "SourceId": "fashion-bingo-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/",
+      "BasePath": "_content/fashion-bingo-api",
+      "RelativePath": "clothing/sneakers.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/clothing/sneakers.jpg"
     },
     {
       "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/stiletto.png",
@@ -300,6 +357,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/clothing/stiletto.png"
+    },
+    {
+      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/straw-hat.png",
+      "SourceId": "fashion-bingo-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/",
+      "BasePath": "_content/fashion-bingo-api",
+      "RelativePath": "clothing/straw-hat.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/clothing/straw-hat.png"
     },
     {
       "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/sun-dress.png",
@@ -340,12 +416,12 @@
       "OriginalItemSpec": "wwwroot/clothing/sweater.jpg"
     },
     {
-      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/tennis-shoes-312023_640.png",
+      "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/tennis-shoes.png",
       "SourceId": "fashion-bingo-api",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/",
       "BasePath": "_content/fashion-bingo-api",
-      "RelativePath": "clothing/tennis-shoes-312023_640.png",
+      "RelativePath": "clothing/tennis-shoes.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -356,7 +432,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/clothing/tennis-shoes-312023_640.png"
+      "OriginalItemSpec": "wwwroot/clothing/tennis-shoes.png"
     },
     {
       "Identity": "/Users/christiatidwell/Projects/fashion-bingo/fashion-bingo-api/wwwroot/clothing/trousers.png",

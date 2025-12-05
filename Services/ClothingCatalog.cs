@@ -15,21 +15,32 @@ public static class ClothingCatalog
 
     private static readonly List<ClothingTemplate> Templates = new()
     {
-        new("Winter Coat", "Coat", "Streetwear", "Common", "pink-coat.png"),
-        new("Blue Leather Handbag", "Shoes", "Streetwear", "Common", "handbag-9141957_640.png"),
-        new("Black Top", "Blouse", "Streetwear", "Common", "blouse-black.png"),
-        new("Leather Coat", "Coat", "Winter", "Common", "leather-coat.png"),
-        new("Trousers", "Sportswear", "Resort", "Common","trousers-8029163_640.png" ),
+       new("Winter Coat", "Coat", "Streetwear", "Common", "pink-coat.png"),
+
+      new("Leather Coat", "Coat", "Winter", "Common", "leather-coat.png"),
+     new("Doc Martens", "Shoes", "Boots", "Common", "doc-marten.png"),
+
+      new("Blue Leather Handbag", "Bag", "Streetwear", "Common", "handbag-blue.png"),
+     new("Black Top", "Blouse", "Streetwear", "Common", "blouse-black.png"),
+      new("Pearl Necklace", "Necklace", "Runway", "Legendary", "pearls.png"),
+      
         new("Sun Dress", "Dress", "Casual", "Common", "sun-dress.png"),
+      new ("Summer Sandal", "Shoes", "Sportswear", "Common", "sandal.png"),
+      new("Sun Hat", "Hat", "Sportswear", "Common", "straw-hat.png"),
+
         new("T Shirt", "Shirt", "Casual", "Common", "pink-tee.png"),
-        new("Sneakers", "Shoes", "Athleisure", "common", "sneakers.png"),
+        new("Sneakers", "Shoes", "Athleisure", "common", "sneakers.jpg"),
         new("Jeans", "Pants", "Streetwear", "Common", "goodjeans.png"),
-        new("Velvet Black Purse", "Bag", "Evening", "Epic", "purse-black.png"),
-        new("Evening Shoe", "Shoes", "Evening", "Epic", "red-heel.png"),
-        new("Sweater", "Sweater", "Streetwear", "Common", "sweater.jpg"),
-        new("Pearl Necklace", "Necklace", "Runway", "Legendary", "pearls.png"),
-        new("Casual Shoes", "Shoes", "Streetwear", "common", "tennis-shoes-312023_640.png"),
-        new("Black Stiletto", "Shoes", "Evening", "Rare", "stiletto.png")
+        new("Baseball Hat", "Hat", "Casual", "Common", "baseball-hat.png"),
+
+       new("Velvet Black Purse", "Bag", "Evening", "Epic", "purse-black.png"),
+       new("Black Stiletto", "Shoes", "Evening", "Rare", "stiletto.png"),
+
+      new("Trousers", "Pants", "Resort", "Common","trousers.png" ),
+       new("Sweater", "Sweater", "Streetwear", "Common", "sweater.jpg"),
+      new("Casual Shoes", "Shoes", "Streetwear", "common", "tennis-shoes.png"),
+
+       new("Evening Shoe", "Shoes", "Evening", "Epic", "red-heel.png")
     };
 
     private static readonly Dictionary<string, Func<string, string>> OutlineByType = new(StringComparer.OrdinalIgnoreCase)
@@ -42,7 +53,7 @@ public static class ClothingCatalog
         ["Necklace"] = color => SvgData(BuildAccessorySvg(color))
     };
 
-    public static ClothingItem CreateRandomItem(string rarity, Random rng)
+    public static ClothingItem CreateRandomItem(string rarity, Random rng, ISet<string>? excludedNames = null)
     {
         var pool = Templates
             .Where(t => string.Equals(t.Rarity, rarity, StringComparison.OrdinalIgnoreCase))
@@ -51,6 +62,18 @@ public static class ClothingCatalog
         if (pool.Count == 0)
         {
             pool = Templates;
+        }
+
+        if (excludedNames is { Count: > 0 })
+        {
+            var filtered = pool
+                .Where(t => !excludedNames.Contains(t.Name))
+                .ToList();
+
+            if (filtered.Count > 0)
+            {
+                pool = filtered;
+            }
         }
 
         var template = pool[rng.Next(pool.Count)];

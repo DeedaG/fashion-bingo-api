@@ -1,8 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 public class BingoService
 {
     private readonly Random _random = new Random();
     private readonly List<int> _numberPool = Enumerable.Range(1, 75).ToList();
     private readonly Random _rand = new Random();
+    private readonly ClosetService _closetService;
+
+    public BingoService(ClosetService closetService)
+    {
+        _closetService = closetService;
+    }
 
     // Generate a new bingo card (5x5)
     public int[][] GenerateCard()
@@ -38,6 +48,30 @@ public class BingoService
         string[] rarities = { "Common", "Rare", "Epic", "Legendary" };
         string rarity = rarities[_random.Next(rarities.Length)];
         return ClothingCatalog.CreateRandomItem(rarity, _random);
+    }
+
+    public ClothingItem GenerateReward(Guid playerId)
+    {
+        string[] rarities = { "Common", "Rare", "Epic", "Legendary" };
+        string rarity = rarities[_random.Next(rarities.Length)];
+        HashSet<string>? ownedNames = null;
+        try
+        {
+            var closet = _closetService.GetCloset(playerId);
+            if (closet?.Count > 0)
+            {
+                ownedNames = closet
+                    .Where(item => !string.IsNullOrWhiteSpace(item.Name))
+                    .Select(item => item.Name)
+                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            }
+        }
+        catch
+        {
+            // If fetching the closet fails, fall back to null which allows the catalog to pick any item.
+        }
+
+        return ClothingCatalog.CreateRandomItem(rarity, _random, ownedNames);
     }
 
     public int GetNextNumberForCaller()

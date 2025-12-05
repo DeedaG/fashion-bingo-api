@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
 public class ClosetService
@@ -30,6 +33,12 @@ public class ClosetService
     {
         var player = EnsurePlayer(playerId);
 
+        if (player.Closet != null && player.Closet
+                .Any(c => string.Equals(c.Name, item.Name, StringComparison.OrdinalIgnoreCase)))
+        {
+            return player.Closet.First(c => string.Equals(c.Name, item.Name, StringComparison.OrdinalIgnoreCase));
+        }
+
         var closetItem = new ClothingItem
         {
             Id = Guid.NewGuid(),
@@ -58,6 +67,42 @@ public class ClosetService
         player.CurrentMannequin.EquippedItems[item.Type] = item;
         _context.SaveChanges();
         return player.CurrentMannequin;
+    }
+
+    public bool ConsumeClosetItems(Guid playerId, IEnumerable<Guid> itemIds)
+    {
+        var ids = itemIds?
+            .Where(id => id != Guid.Empty)
+            .Distinct()
+            .ToList() ?? new List<Guid>();
+
+        if (ids.Count == 0)
+        {
+            return false;
+        }
+
+        var player = EnsurePlayer(playerId);
+        player.Closet ??= new List<ClothingItem>();
+
+        var idSet = new HashSet<Guid>(ids);
+
+        if (player.Closet.Count > 0)
+        {
+            player.Closet.RemoveAll(item => idSet.Contains(item.Id));
+        }
+
+        var itemsToRemove = _context.ClothingItem
+            .Where(ci => ci.PlayerId == playerId && idSet.Contains(ci.Id))
+            .ToList();
+
+        if (itemsToRemove.Count == 0)
+        {
+            return false;
+        }
+
+        _context.ClothingItem.RemoveRange(itemsToRemove);
+        _context.SaveChanges();
+        return true;
     }
 
     private Player EnsurePlayer(Guid playerId)
