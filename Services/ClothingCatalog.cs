@@ -44,7 +44,7 @@ public static class ClothingCatalog
       new("Silver Bag", "Bag", "Evening", "Rare", "silver-bag.png"),
       new("Black Stiletto", "Shoes", "Evening", "Rare", "stiletto.png"),
       new("Black Dress", "Dress", "Evening", "Rare", "gown-black.png"),
-      new("Sparkles", "Evening", "Necklace", "Rare", "sparkles.jpg"),
+      new("Sparkles", "Evening", "Necklace", "Rare", "sparkles.png"),
 
     //outfit #5
      new("Trousers", "Pants", "Resort", "Common","trousers.png" ),
