@@ -17,6 +17,7 @@ builder.Services.AddScoped<ClosetService>();
 builder.Services.AddScoped<LeaderboardService>();
 builder.Services.AddScoped<MysteryBoxService>();
 builder.Services.AddScoped<PlayerService>();
+builder.Services.AddScoped<ShopService>();
 
 // Configure CORS for Angular dev server
 builder.Services.AddCors(options =>

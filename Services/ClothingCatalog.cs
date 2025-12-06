@@ -21,26 +21,30 @@ public static class ClothingCatalog
      new("Pom Hat", "Hat", "Winter wear", "Common", "pom-hat.jpg"),
       
       //outfit #1
-       new("Sun Dress", "Dress", "Casual", "Common", "sun-dress.png"),
-     new ("Summer Sandal", "Shoes", "Sportswear", "Common", "sandal.png"),
-     new("Sun Hat", "Hat", "Sportswear", "Common", "straw-hat.png"),
+       new("Sun Dress", "Dress", "Resort Wear", "Common", "sun-dress.png"),
+     new ("Summer Sandal", "Shoes", "Resort Wear", "Common", "sandal.png"),
+     new("Sun Hat", "Hat", "Resort Wear", "Common", "straw-hat.png"),
+     new("Beach Bag", "Bag", "Resort Wear", "rare", "beach-bag.jpg"),
 
     //outfit #2
      new("Black Top", "Blouse", "Streetwear", "Common", "blouse-black.png"),
      new("Pearl Necklace", "Necklace", "Runway", "Legendary", "pearls.png"),
-      new("Gold Skirt", "Pants", "Sportswear", "Common", "taffeta-skirt.png"),
+      new("Gold Skirt", "Pants", "Sportswear", "Common", "gold-skirt.png"),
       new("Black Boot", "Shoes", "Sportwear", "Common", "boot.png"),
+      new("Velvet Black Purse", "Bag", "Evening", "Epic", "purse-black.png"),
 
     // outfit #3
-        new("T Shirt", "Shirt", "Casual", "Common", "pink-tee.png"),
+        new("T Shirt", "Shirt", "Casual", "Common", "pink-tshirt.png"),
        new("Sneakers", "Shoes", "Athleisure", "common", "sneakers.jpg"),
        new("Jeans", "Pants", "Streetwear", "Common", "goodjeans.png"),
        new("Baseball Hat", "Hat", "Casual", "Common", "baseball-hat.png"),
+       new("Crossbody Bag", "Bag", "Casual", "Rare", "crossbody.jpg"),
 
     //outfit #4
-      new("Velvet Black Purse", "Bag", "Evening", "Epic", "purse-black.png"),
+      new("Silver Bag", "Bag", "Evening", "Rare", "silver-bag.png"),
       new("Black Stiletto", "Shoes", "Evening", "Rare", "stiletto.png"),
       new("Black Dress", "Dress", "Evening", "Rare", "gown-black.png"),
+      new("Sparkles", "Evening", "Necklace", "Rare", "sparkles.jpg"),
 
     //outfit #5
      new("Trousers", "Pants", "Resort", "Common","trousers.png" ),

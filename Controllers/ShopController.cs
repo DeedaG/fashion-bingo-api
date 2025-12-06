@@ -5,42 +5,38 @@ using Microsoft.AspNetCore.Mvc;
 public class ShopController : ControllerBase
 {
     private readonly ShopService _shopService;
-    private readonly PlayerService _playerService;
 
-    public ShopController(
-        ShopService shopService,
-        PlayerService playerService)
+    public ShopController(ShopService shopService)
     {
         _shopService = shopService;
-        _playerService = playerService;
     }
 
-
-
-[HttpPost("{playerId}/buy")]
-public ActionResult<Economy> Buy(Guid playerId, [FromBody] ShopPurchase purchase)
-{
-    var player = _playerService.GetPlayer(playerId);
-
-    switch (purchase.Type)
+    [HttpGet("offers")]
+    public ActionResult<IEnumerable<ShopOffer>> GetOffers()
     {
-        case "coins":
-            player.Economy.Gems -= purchase.Cost;
-            player.Economy.Coins += purchase.Amount;
-            break;
-
-        case "gems":
-            player.Economy.Gems += purchase.Amount;
-            break;
-
-        case "mysterybox":
-            if (player.Economy.Coins < purchase.Cost)
-                return BadRequest("Not enough coins");
-            player.Economy.Coins -= purchase.Cost;
-            break;
+        return Ok(_shopService.GetOffers());
     }
 
-    _shopService.SaveEconomy(player);
-    return Ok(player.Economy);
-}
+    [HttpPost("{playerId}/buy-item")]
+    public ActionResult<ShopPurchaseResult> BuyItem(Guid playerId, [FromBody] ShopPurchaseRequest request)
+    {
+        if (request == null || string.IsNullOrWhiteSpace(request.OfferId))
+        {
+            return BadRequest("offerId is required.");
+        }
+
+        try
+        {
+            var result = _shopService.PurchaseOffer(playerId, request.OfferId);
+            return Ok(result);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return NotFound(ex.Message);
+        }
+    }
 }
