@@ -13,8 +13,9 @@ public class PlayerService
     {
         // Load from database instead of dictionary
         var player = _context.Player
-                            .Where(c => c.Id == playerId)
-                            .FirstOrDefault();
+                            .Include(p => p.Economy)
+                            .Include(p => p.CurrentMannequin)
+                            .FirstOrDefault(c => c.Id == playerId);
 
         if(player == null)
         {

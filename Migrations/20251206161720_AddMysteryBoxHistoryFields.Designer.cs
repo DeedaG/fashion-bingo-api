@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace fashion_bingo_api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251206161720_AddMysteryBoxHistoryFields")]
+    partial class AddMysteryBoxHistoryFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,9 +144,6 @@ namespace fashion_bingo_api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AutoDaubBoosts")
-                        .HasColumnType("int");
-
                     b.Property<int>("Coins")
                         .HasColumnType("int");
 
@@ -152,9 +152,6 @@ namespace fashion_bingo_api.Migrations
 
                     b.Property<Guid>("EconomyId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("FreeDaubTokens")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsPremium")
                         .HasColumnType("bit");

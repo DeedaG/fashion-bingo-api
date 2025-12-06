@@ -8,4 +8,6 @@ public class Player
     public Economy Economy { get; set; } = new Economy();
     public List<MysteryBoxReward> InventoryRewards { get; set; } = new();
     public bool IsPremium { get; set; }
+    public int FreeDaubTokens { get; set; }
+    public int AutoDaubBoosts { get; set; }
 }

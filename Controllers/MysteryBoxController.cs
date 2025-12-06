@@ -5,30 +5,43 @@ using Microsoft.AspNetCore.Mvc;
 public class MysteryBoxController : ControllerBase
 {
     private readonly MysteryBoxService _mysteryBoxService;
-    private readonly PlayerService _playerService;
-    private readonly ClosetService _closetService;
 
-    public MysteryBoxController(
-        MysteryBoxService mysteryBoxService,
-        PlayerService playerService,
-        ClosetService closetService)
+    public MysteryBoxController(MysteryBoxService mysteryBoxService)
     {
         _mysteryBoxService = mysteryBoxService;
-        _playerService = playerService;
-        _closetService = closetService;
+    }
+
+    [HttpGet("pricing")]
+    public ActionResult<MysteryBoxPricingDto> GetPricing()
+    {
+        return Ok(_mysteryBoxService.GetPricing());
     }
 
     [HttpPost("{playerId}/open")]
-    public ActionResult<MysteryBoxReward> OpenBox(Guid playerId)
+    public ActionResult<MysteryBoxOpenResult> OpenBox(Guid playerId, [FromBody] OpenMysteryBoxRequest? request)
     {
-        var reward = _mysteryBoxService.OpenMysteryBox();
+        try
+        {
+            var result = _mysteryBoxService.OpenMysteryBox(playerId, request?.PaymentMethod);
+            return Ok(result);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 
-        var player = _playerService.GetPlayer(playerId);
-        player.Economy.Coins += reward.Coins;
-        player.Economy.Gems += reward.Gems;
-        player.InventoryRewards.Add(reward);
-        _closetService.AddItemToCloset(playerId, reward.Clothing);
-
-        return Ok(reward);
+    [HttpGet("{playerId}/history")]
+    public ActionResult<MysteryBoxHistoryResponseDto> GetHistory(Guid playerId)
+    {
+        try
+        {
+            var response = _mysteryBoxService.GetHistory(playerId);
+            return Ok(response);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return NotFound(ex.Message);
+        }
     }
 }
